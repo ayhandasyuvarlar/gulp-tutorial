@@ -3,6 +3,10 @@ import imagemin from "gulp-imagemin";
 import GulpUglify from "gulp-uglify";
 import GulpCleanCss from "gulp-clean-css";
 import gulpConcat from "gulp-concat";
+import dartSass from 'sass'
+import gulpSass from 'gulp-sass'
+const sass = gulpSass(dartSass)
+
 // gulp.task => create a  of task
 
 // gulp.src  => source files
@@ -45,6 +49,10 @@ gulp.task("concat", () => {
     .pipe(gulpConcat("all.js"))
     .pipe(gulp.dest("./dist/scripts"));
 });
-gulp.task("taskName", () => {
-  console.log("hello world");
+
+gulp.task("sass", () => {
+  gulp
+    .src("./src/style/scss/*.scss")
+    .pipe(sass().on("error", sass.logError))
+    .pipe(gulp.dest("./dist/style/"));
 });

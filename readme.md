@@ -72,7 +72,7 @@ gulp.task("transferHtml", () => {
 
 ### Gulp.js is an open source library that allows us to reduce the size of images.
 
-- Dowland
+- download
 
 ```js
 npm install --save-dev gulp-imagemin
@@ -89,7 +89,7 @@ gulp.task("copy", () => {
 
 ### UglifyJS is a JavaScript parser/compressor/beautifier toolkit. It can be used to combine and minify JavaScript assets so that they require less HTTP requests and make your site load faster.
 
-- dowland
+- download
 
 ```js
 npm install --save-dev gulp-uglify
@@ -120,7 +120,7 @@ gulp.task("minJs", () => {
 
 ### It minifies (compresses) css files by removing unnecessary spaces, thus minimizing the file size.
 
-- dowland
+- download
 
 ```jsx
 npm install gulp-clean-css --save-dev
@@ -169,4 +169,36 @@ gulp.task("concat", () => {
  <div style="width:50%">
    <h1>Output</h1>
   <img src="./dist/images/concatout.png" alt="" width="100%"></div>
+</div>
+
+# gulp-sass
+
+### gulp-sass library converts .scss files to .css files
+
+- download
+
+```js
+npm install --save-dev gulp-sass
+npm install sass
+```
+
+```jsx
+import dartSass from "sass";
+import gulpSass from "gulp-sass";
+const sass = gulpSass(dartSass);
+
+gulp.task("sass", () => {
+  gulp
+    .src("./src/style/scss/*.scss")
+    .pipe(sass().on("error", sass.logError))
+    .pipe(gulp.dest("./dist/style/"));
+});
+```
+<div style="display: flex;">
+ <div style="width:50%">
+   <h1>Enter value</h1>
+  <img src="./dist/images/sassenter.png" alt="" width="100%"></div>
+ <div style="width:50%">
+   <h1>Output</h1>
+  <img src="./dist/images/sassout.png" alt="" width="100%"></div>
 </div>
