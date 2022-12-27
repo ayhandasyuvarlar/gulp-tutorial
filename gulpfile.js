@@ -1,5 +1,6 @@
 import gulp from "gulp";
 import imagemin from "gulp-imagemin";
+import GulpUglify from "gulp-uglify";
 // gulp.task => create a  of task
 
 // gulp.src  => source files
@@ -23,6 +24,12 @@ gulp.task("copy", () => {
 gulp.task("transferHtml", async () => {
   gulp.src("./src/*.html").pipe(await gulp.dest("./dist/public"));
 });
+
+gulp.task('minJs'  ,  () =>{
+  gulp.src('./src/scripts/*')
+  .pipe(GulpUglify())
+  .pipe(gulp.dest('./dist/scripts'))
+})
 
 gulp.task("taskName", () => {
   console.log("hello world");

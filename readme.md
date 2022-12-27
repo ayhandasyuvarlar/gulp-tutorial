@@ -84,3 +84,37 @@ gulp.task("copy", () => {
   gulp.src("./*.png").pipe(imagemin()).pipe(gulp.dest("./dist/images"));
 });
 ```
+
+# gulp-uglify
+
+### UglifyJS is a JavaScript parser/compressor/beautifier toolkit. It can be used to combine and minify JavaScript assets so that they require less HTTP requests and make your site load faster.
+
+- dowland
+
+```js
+npm install --save-dev gulp-uglify
+```
+
+```js
+gulp.task("minJs", () => {
+  gulp
+    .src("./src/scripts/*")
+    .pipe(GulpUglify())
+    .pipe(gulp.dest("./dist/scripts"));
+});
+```
+
+<div style="display: flex;">
+ <div style="width:50%">
+   <h1>Enter value</h1>
+  <img src="./dist/images/JSenter.png" alt="" width="100%"></div>
+ <div style="width:50%">
+   <h1>Output</h1>
+  <img src="./dist/images/JSout.png" alt="" width="100%"></div>
+</div>
+
+
+# 
+
+
+

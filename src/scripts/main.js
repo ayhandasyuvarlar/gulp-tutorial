@@ -1,5 +1,5 @@
 function greet(fullName) {
-  if (fullName !== null) {
+  if (fullName != null ) {
     console.log(`Welcome ${fullName}`);
   } else {
     console.log("enter string value");
