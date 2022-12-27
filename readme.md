@@ -133,7 +133,7 @@ gulp.task("cssMin", () => {
     .pipe(GulpCleanCss())
     .pipe(gulp.dest("./dist/style"));
 });
-``` 
+```
 
 <div style="display: flex;">
  <div style="width:50%">
@@ -142,4 +142,31 @@ gulp.task("cssMin", () => {
  <div style="width:50%">
    <h1>Output</h1>
   <img src="./dist/images/cssout.png" alt="" width="100%"></div>
+</div>
+
+# gulp-concat
+
+### gulp-concat combines CSS and JavaScript files and presents them as a single file, while gulp-watch monitors changes in folders and files and performs the specified task(s) in case of changes.
+
+```jsx
+npm install gulp-concat --save-dev
+```
+
+```js
+gulp.task("concat", () => {
+  gulp
+    .src("./src/scripts/*.js")
+    .pipe(GulpUglify())
+    .pipe(gulpConcat("all.js"))
+    .pipe(gulp.dest("./dist/scripts"));
+});
+```
+
+<div style="display: flex;">
+ <div style="width:50%">
+   <h1>Enter value</h1>
+  <img src="./dist/images/concatenter.png" alt="" width="100%"></div>
+ <div style="width:50%">
+   <h1>Output</h1>
+  <img src="./dist/images/concatout.png" alt="" width="100%"></div>
 </div>

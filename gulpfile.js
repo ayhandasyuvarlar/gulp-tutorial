@@ -2,6 +2,7 @@ import gulp from "gulp";
 import imagemin from "gulp-imagemin";
 import GulpUglify from "gulp-uglify";
 import GulpCleanCss from "gulp-clean-css";
+import gulpConcat from "gulp-concat";
 // gulp.task => create a  of task
 
 // gulp.src  => source files
@@ -37,7 +38,13 @@ gulp.task("cssMin", () => {
     .pipe(GulpCleanCss())
     .pipe(gulp.dest("./dist/style"));
 });
-
+gulp.task("concat", () => {
+  gulp
+    .src("./src/scripts/*.js")
+    .pipe(GulpUglify())
+    .pipe(gulpConcat("all.js"))
+    .pipe(gulp.dest("./dist/scripts"));
+});
 gulp.task("taskName", () => {
   console.log("hello world");
 });
