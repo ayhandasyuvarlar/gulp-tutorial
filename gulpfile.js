@@ -1,6 +1,7 @@
 import gulp from "gulp";
 import imagemin from "gulp-imagemin";
 import GulpUglify from "gulp-uglify";
+import GulpCleanCss from "gulp-clean-css";
 // gulp.task => create a  of task
 
 // gulp.src  => source files
@@ -16,20 +17,26 @@ gulp.task("hello-world", async () => {
 });
 
 gulp.task("copy", () => {
-  gulp.src("./*.png")
-  .pipe(imagemin())
-  .pipe(gulp.dest("./dist/images"));
+  gulp.src("./*.png").pipe(imagemin()).pipe(gulp.dest("./dist/images"));
 });
 
 gulp.task("transferHtml", async () => {
   gulp.src("./src/*.html").pipe(await gulp.dest("./dist/public"));
 });
 
-gulp.task('minJs'  ,  () =>{
-  gulp.src('./src/scripts/*')
-  .pipe(GulpUglify())
-  .pipe(gulp.dest('./dist/scripts'))
-})
+gulp.task("minJs", () => {
+  gulp
+    .src("./src/scripts/*")
+    .pipe(GulpUglify())
+    .pipe(gulp.dest("./dist/scripts"));
+});
+
+gulp.task("cssMin", () => {
+  gulp
+    .src("./src/style/*.css")
+    .pipe(GulpCleanCss())
+    .pipe(gulp.dest("./dist/style"));
+});
 
 gulp.task("taskName", () => {
   console.log("hello world");

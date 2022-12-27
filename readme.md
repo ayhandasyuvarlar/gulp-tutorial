@@ -113,8 +113,33 @@ gulp.task("minJs", () => {
   <img src="./dist/images/JSout.png" alt="" width="100%"></div>
 </div>
 
+<br/>
+<br/>
 
-# 
+# gulp-clean-css
 
+### It minifies (compresses) css files by removing unnecessary spaces, thus minimizing the file size.
 
+- dowland
 
+```jsx
+npm install gulp-clean-css --save-dev
+```
+
+```js
+gulp.task("cssMin", () => {
+  gulp
+    .src("./src/style/*.css")
+    .pipe(GulpCleanCss())
+    .pipe(gulp.dest("./dist/style"));
+});
+```
+
+<div style="display: flex;">
+ <div style="width:50%">
+   <h1>Enter value</h1>
+  <img src="./dist/images/cssenter.png" alt="" width="100%"></div>
+ <div style="width:50%">
+   <h1>Output</h1>
+  <img src="./dist/images/cssout.png" alt="" width="100%"></div>
+</div>
