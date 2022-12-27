@@ -133,7 +133,7 @@ gulp.task("cssMin", () => {
     .pipe(GulpCleanCss())
     .pipe(gulp.dest("./dist/style"));
 });
-```
+``` 
 
 <div style="display: flex;">
  <div style="width:50%">
