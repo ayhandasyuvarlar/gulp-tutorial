@@ -10,3 +10,13 @@ body {
 .container__text {
   text-align: center;
 }
+.container__title {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.container__link {
+  background-color: rgba(102, 85, 68, 0.4);
+  list-style: none;
+  line-height: 40%;
+}

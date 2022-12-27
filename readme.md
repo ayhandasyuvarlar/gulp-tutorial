@@ -194,6 +194,7 @@ gulp.task("sass", () => {
     .pipe(gulp.dest("./dist/style/"));
 });
 ```
+
 <div style="display: flex;">
  <div style="width:50%">
    <h1>Enter value</h1>
@@ -201,4 +202,32 @@ gulp.task("sass", () => {
  <div style="width:50%">
    <h1>Output</h1>
   <img src="./dist/images/sassout.png" alt="" width="100%"></div>
+</div>
+
+# gulp-watch
+
+### Allows watching globs and running a task when a change occurs. Tasks are handled uniformly with the rest of the task system.
+
+```js
+gulp.task("watch", () => {
+  gulp.watch("./src/style/**/*.scss", gulp.series("sass"));
+});
+```
+
+<div style="display: flex;">
+ <div style="width:50%">
+   <h1>Watch start</h1>
+  <img src="./dist/images/watchstart.png" alt="" width="100%"></div>
+ <div style="width:50%">
+   <h1>Enter value</h1>
+  <img src="./dist/images/watchenter.png" alt="" width="100%"></div>
+</div>
+
+<div style="display: flex;">
+ <div style="width:50%">
+   <h1>Watch finish</h1>
+  <img src="./dist/images/watch-finish.png" alt="" width="100%"></div>
+ <div style="width:50%">
+   <h1>Output</h1>
+  <img src="./dist/images/watchout.png" alt="" width="100%"></div>
 </div>

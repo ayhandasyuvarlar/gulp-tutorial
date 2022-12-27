@@ -9,4 +9,14 @@ body {
   &__text {
     text-align: center;
   }
+  &__title {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  &__link {
+    background-color: #6546;
+    list-style: none;
+    line-height: 40%;
+  }
 }
