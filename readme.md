@@ -59,11 +59,28 @@ gulp 'taskName'
 ### gulp with file and folder transfer process
 
 ```js
-gulp.task("transferHtml", () => {
+gulp.task("transferImg", () => {
   gulp.src("./img/*").pipe(gulp.dest("./dist/images"));
 });
 
 gulp.task("transferHtml", () => {
   gulp.src("./src/*.html").pipe(gulp.dest("./dist/public"));
+});
+```
+
+# Gulp Imagemin
+
+### Gulp.js is an open source library that allows us to reduce the size of images.
+
+- Dowland
+
+```js
+npm install --save-dev gulp-imagemin
+```
+
+```js
+import imagemin from "gulp-imagemin";
+gulp.task("copy", () => {
+  gulp.src("./*.png").pipe(imagemin()).pipe(gulp.dest("./dist/images"));
 });
 ```

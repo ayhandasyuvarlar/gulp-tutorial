@@ -1,5 +1,5 @@
 import gulp from "gulp";
-
+import imagemin from "gulp-imagemin";
 // gulp.task => create a  of task
 
 // gulp.src  => source files
@@ -15,7 +15,9 @@ gulp.task("hello-world", async () => {
 });
 
 gulp.task("copy", () => {
-  gulp.src("./img/*").pipe(gulp.dest("./dist/images"));
+  gulp.src("./*.png")
+  .pipe(imagemin())
+  .pipe(gulp.dest("./dist/images"));
 });
 
 gulp.task("transferHtml", async () => {

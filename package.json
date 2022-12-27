@@ -11,6 +11,7 @@
   "author": "Ayhan Dasyuvarlar",
   "license": "ISC",
   "devDependencies": {
-    "gulp": "^4.0.2"
+    "gulp": "^4.0.2",
+    "gulp-imagemin": "^8.0.0"
   }
 }
